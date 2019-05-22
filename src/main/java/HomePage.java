@@ -22,14 +22,11 @@ public class HomePage extends BasePage {
     private List<WebElement> homeTopButtons;
     //careers [4];
 
-    @FindBy (css = ".m-btn.m-banner__btn")
-    private WebElement viewJobs;
-
     @FindBy(css = ".posting-btn-submit.template-btn-submit.hex-color")
     private List<WebElement> ApplayButtons;
     //backandEngineer [1];
-    @FindBy(css = "")
-    private WebElement applayThisJob;
+    
+
 
 
     public DriverPage clickApplayButton(){
@@ -38,6 +35,11 @@ public class HomePage extends BasePage {
 
         return new DriverPage(driver);
 
+    }
+    public CareersPage clickCareerButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(homeTopButtons.get(4)));
+        homePageButtons.click();
+        return new CareersPage(driver);
     }
 
     //public DriverPage clickDriverButton(){
