@@ -14,7 +14,7 @@ public class CareersPage extends BasePage{
 
     public JobsPage clickViewJobs(){
        viewJobs.click();
-       return new JobsPage();
+       return new JobsPage(driver);
 
     }
 

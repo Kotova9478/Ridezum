@@ -9,6 +9,23 @@ public class CareersTest extends RidezumBaseTest {
 
         homePage = new HomePage(driver);
         careersPage = homePage.clickCareerButton();
+
+        // methotd for REMEMBER PREVIOUS WINDOW
+        String windowHandleBefore = driver.getWindowHandle();
+//method RETURN PREVIOUS  WINDOW
+      //  driver.switchTo().window(windowHandleBefore);
+
+     //SWITCH TO NEW WINDOW
+        for(String winHandle: driver.getWindowHandles()){
+
+            driver.switchTo().window(winHandle);
+        }
+
+
+
+
+
     }
 }
+
 

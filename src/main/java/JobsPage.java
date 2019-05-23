@@ -13,12 +13,13 @@ public class JobsPage extends BasePage {
     // topButton[0];
     //        [1];
 
-    public String Applay(){
-        //wait.until(E)
+    public  ApplayPage clickApplayButton(){
+       // wait.until(E)
         applayThisJob.get(0).click();
-       String page = applayThisJob.get(0).getText();
-       return page;
+       return new ApplayPage(driver);
+
 
 
     }
 }
+

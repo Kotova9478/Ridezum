@@ -1,3 +1,4 @@
+import helper.UserMassives;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,6 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     public class RidezumBaseTest {
 
     protected WebDriver driver;
+    protected UserDriver userDriver;
+    protected UserMassives userMassives;
+    protected CareersPage careersPage;
+    protected JobsPage jobsPage;
+
+
    // protected UserDriver userDriver;
    // protected HomePage homePage;
        // protected WebDriverWait wait;
@@ -22,6 +29,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
              driver.get("https://ridezum.com");
             String titleExpected = "Zum | Rides for kids, After School Care";
             String titleActual = driver.getTitle();
+
+            UserMassives userMassives = new UserMassives();
+
             //Assert.assertTrue(titleExpected.equals(titleActual));
 
           //  wait = new WebDriverWait(driver, 10);

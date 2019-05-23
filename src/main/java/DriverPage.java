@@ -4,6 +4,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Random;
+
 public class DriverPage extends BasePage {
 
     public DriverPage(WebDriver driver){
@@ -62,12 +64,24 @@ public class DriverPage extends BasePage {
         //wait.until(ExpectedConditions.elementToBeClickable(phoneField));
         phoneField.sendKeys(phone);
     }
-    public void selectRegion() {
+  //  public void selectRegion() {
 
         //wait.until(ExpectedConditions.elementToBeClickable(regionSelectButton));
 
-        Select select = new Select(regionSelectButton);
-        select.selectByIndex(1);
+       // Select select = new Select(regionSelectButton);
+        //select.selectByIndex(1);
+   // }
+    public void selectRandomRegion() {
+        // wait.until(ExpectedConditions.elementToBeClickable(regionSelectButton));
+      Select selectRandom = new Select(regionSelectButton);
+      int index = 0;
+      Random random = new Random();
+      random.nextInt(6);
+      if (index == 0){
+          index = 1;
+      }
+        System.out.println(index);
+      selectRandom.selectByIndex(index);
     }
         public void inputZipCodeField(String zipCode) {
         //wait.until(ExpectedConditions.elementToBeClickable(zipCodeField));
@@ -79,11 +93,11 @@ public class DriverPage extends BasePage {
         refferalCodeField.sendKeys(refferalCode);
 
     }
-    public String submitButton(){
+    public SubmitWindow submitButton(){
 
         submitButton.click();
-        String submit = submitButton.getText();
-        return submit;
+
+        return  new SubmitWindow();
 
     }
 }
