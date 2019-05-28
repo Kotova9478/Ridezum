@@ -20,7 +20,7 @@ public class DriverTest extends RidezumBaseTest {
         DriverPage driverPage = new DriverPage(driver);
 
         userDriver = new UserDriver();
-       UserMassives userMassives = new UserMassives();
+        UserMassives userMassives = new UserMassives();
 
         driver.switchTo().frame(driver.findElement(By.cssSelector(".iframe-container.m-banner-drive__iframe")));
 
