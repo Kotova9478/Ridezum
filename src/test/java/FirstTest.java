@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class FirstTest extends RidezumBaseTest {
         private HomePage homePage;
         private static Logger log = Logger.getLogger(FirstTest.class.getName());
-         @Test
+     //    @Test
          public void testFirst() {
 
              homePage = new HomePage(driver);

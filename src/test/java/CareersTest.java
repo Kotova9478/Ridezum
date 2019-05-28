@@ -4,7 +4,7 @@ public class CareersTest extends RidezumBaseTest {
     protected HomePage homePage;
     protected CareersPage careersPage;
 
-    @Test
+   // @Test
     public void testCareers() {
 
         homePage = new HomePage(driver);

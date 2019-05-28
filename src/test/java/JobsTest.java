@@ -5,7 +5,7 @@ public class JobsTest extends RidezumBaseTest{
     protected CareersPage careersPage;
     protected JobsPage jobsPage;
 
-    @Test
+  //  @Test
     public void testJobs(){
         homePage.clickCareerButton();
         careersPage.clickViewJobs();
