@@ -1,5 +1,9 @@
 package com.m2.ikea.helper;
 
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.Random;
+
 public class UserIkea {
     private String name;
     private String lastName;
@@ -42,5 +46,7 @@ public class UserIkea {
     public String getRepetEmail(){return repetEmail;}
 
     public String getRePassword(){return rePassword;}
+
+
 
 }

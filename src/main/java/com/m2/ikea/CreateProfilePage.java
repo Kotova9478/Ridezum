@@ -11,11 +11,13 @@ import java.util.List;
 import java.util.Random;
 
 public class CreateProfilePage extends BasePageIkea {
+
     public CreateProfilePage (WebDriver driver){
         super(driver);
     }
     @FindBy(css ="input")//"ikea-map-input.inputs.capitalize.ui-input-text.ui-body-c.ui-corner-all.ui-shadow-inset" )
     private List<WebElement> fields;
+
      /*  0: input.ui-input-text.ui-body-a.ui-corner-all.ui-shadow-inset
 1: input#name.ikea-map-input.inputs.capitalize.ui-input-text.ui-body-c.ui-corner-all.ui-shadow-inset
 2: input#surname.ikea-map-input.inputs.capitalize.ui-input-text.ui-body-c.ui-corner-all.ui-shadow-inset
@@ -34,10 +36,12 @@ public class CreateProfilePage extends BasePageIkea {
     private WebElement passwordField;
     private WebElement rePasswordField;
     private WebElement captchaIdField;
-    private WebElement captchaInputField;
+    //private WebElement captchaInputField;
 
    // @FindBy(css = ".clearfix")
    // private WebElement createProfileButton;
+    @FindBy(css = "#captchaInput")
+    private WebElement captchaInputField;
 
     @FindBy(css = "#submit")
     private WebElement createSubmitButtun;
@@ -75,27 +79,45 @@ public class CreateProfilePage extends BasePageIkea {
         wait.until(ExpectedConditions.elementToBeClickable(fields.get(8)));
        fields.get(8).sendKeys(characters);
     }
-    public void inputcaptchaInputField(String characters){
-        wait.until(ExpectedConditions.elementToBeClickable(fields.get(9)));
-        fields.get(9).sendKeys(characters);
+    //public void inputcaptchaInputField(String characters){
+      //  wait.until(ExpectedConditions.elementToBeClickable(captchaInputField));
+       // captchaInputField.sendKeys(characters);
+   // }
+
+
+        // public void clickSubmit(){
+        // createSubmitButtun.click();
+
+
+
+    public void inputRandomCharacters() {
+     wait.until(ExpectedConditions.elementToBeClickable(captchaInputField));
+     captchaInputField.sendKeys("d f e r f g f");
+
+   /* Select selectRandom;
+    selectRandom = new Select(captchaInputField);
+    int index = 0;
+    Random random = new Random();
+    random.nextInt(7);
+    if (index == 0) {
+        index = 1;
     }
-    /*public void selectRandomCharacters() {
-        // wait.until(ExpectedConditions.elementToBeClickable(regionSelectButton));
-        Select selectRandom;
-        selectRandom = new Select(fields.get(9));
-        int index = 0;
-        Random random = new Random();
-        random.nextInt(7);
-        if (index == 0){
-            index = 1; }*/
-
-       // public void clickSubmit(){
-       // createSubmitButtun.click();
-
-
-
+    selectRandom.selectByIndex(index);
+    }
+    public void randomSelect(){
+      Random rand = new Random();
+      int index;
+      for (index = 0;index < 10; index++ ){
+          rand.nextInt(index);
+      }*/
 
     }
+    public void submitButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(createSubmitButtun));
+        createSubmitButtun.click();
+    }
+
+}
          /*public void selectRandomCharacters() {
         // wait.until(ExpectedConditions.elementToBeClickable(regionSelectButton));
         Select selectRandom;

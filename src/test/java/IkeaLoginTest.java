@@ -14,7 +14,7 @@ public class IkeaLoginTest extends BaseTestIkea {
     private CreateProfilePage createProfilePage;
     private UserIkea userIkea;
 
-   // @Test
+    @Test
     public void testIkeaLogin(){
 
         homePageIkea = new HomePageIkea(driver);
@@ -42,6 +42,8 @@ public class IkeaLoginTest extends BaseTestIkea {
        createProfilePage.inputRepeatEmailField(userIkea.getRepetEmail());
        createProfilePage.inputPasswordField(userIkea.getPassword());
        createProfilePage.inputRePasswordField(userIkea.getRePassword());
+       createProfilePage.inputRandomCharacters();
+       createProfilePage.submitButton();
       // createProfilePage.clickSubmit();
        //createProfilePage.captchaIdField(userIkea.);
       // createProfilePage.inputcaptchaInputField(userIkea.);
